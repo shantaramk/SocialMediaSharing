@@ -12,6 +12,12 @@
 		4CA07DD923DAC80C002246E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CA07DD723DAC80C002246E2 /* Main.storyboard */; };
 		4CA07DDB23DAC80D002246E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CA07DDA23DAC80D002246E2 /* Assets.xcassets */; };
 		4CA07DDE23DAC80D002246E2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CA07DDC23DAC80D002246E2 /* LaunchScreen.storyboard */; };
+		4CA07DEA23DAC81E002246E2 /* TwitterServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA07DE623DAC81E002246E2 /* TwitterServiceManager.swift */; };
+		4CA07DEB23DAC81E002246E2 /* SocialShareManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA07DE723DAC81E002246E2 /* SocialShareManager.swift */; };
+		4CA07DEC23DAC81E002246E2 /* FacebookServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA07DE823DAC81E002246E2 /* FacebookServiceManager.swift */; };
+		4CA07DED23DAC81E002246E2 /* SocialShareProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA07DE923DAC81E002246E2 /* SocialShareProtocol.swift */; };
+		4CA07DEF23DACB94002246E2 /* SharablePost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA07DEE23DACB94002246E2 /* SharablePost.swift */; };
+		4CA07DF123DACC92002246E2 /* SocialMediaSharable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA07DF023DACC92002246E2 /* SocialMediaSharable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +28,12 @@
 		4CA07DDA23DAC80D002246E2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4CA07DDD23DAC80D002246E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4CA07DDF23DAC80D002246E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4CA07DE623DAC81E002246E2 /* TwitterServiceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterServiceManager.swift; sourceTree = "<group>"; };
+		4CA07DE723DAC81E002246E2 /* SocialShareManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialShareManager.swift; sourceTree = "<group>"; };
+		4CA07DE823DAC81E002246E2 /* FacebookServiceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookServiceManager.swift; sourceTree = "<group>"; };
+		4CA07DE923DAC81E002246E2 /* SocialShareProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialShareProtocol.swift; sourceTree = "<group>"; };
+		4CA07DEE23DACB94002246E2 /* SharablePost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharablePost.swift; sourceTree = "<group>"; };
+		4CA07DF023DACC92002246E2 /* SocialMediaSharable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaSharable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +66,7 @@
 		4CA07DD223DAC80C002246E2 /* SocialShareDemo */ = {
 			isa = PBXGroup;
 			children = (
+				4CA07DE523DAC81E002246E2 /* SocialShareManager */,
 				4CA07DD323DAC80C002246E2 /* AppDelegate.swift */,
 				4CA07DD523DAC80C002246E2 /* ViewController.swift */,
 				4CA07DD723DAC80C002246E2 /* Main.storyboard */,
@@ -62,6 +75,19 @@
 				4CA07DDF23DAC80D002246E2 /* Info.plist */,
 			);
 			path = SocialShareDemo;
+			sourceTree = "<group>";
+		};
+		4CA07DE523DAC81E002246E2 /* SocialShareManager */ = {
+			isa = PBXGroup;
+			children = (
+				4CA07DE723DAC81E002246E2 /* SocialShareManager.swift */,
+				4CA07DE923DAC81E002246E2 /* SocialShareProtocol.swift */,
+				4CA07DF023DACC92002246E2 /* SocialMediaSharable.swift */,
+				4CA07DEE23DACB94002246E2 /* SharablePost.swift */,
+				4CA07DE823DAC81E002246E2 /* FacebookServiceManager.swift */,
+				4CA07DE623DAC81E002246E2 /* TwitterServiceManager.swift */,
+			);
+			path = SocialShareManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,8 +161,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CA07DEB23DAC81E002246E2 /* SocialShareManager.swift in Sources */,
+				4CA07DF123DACC92002246E2 /* SocialMediaSharable.swift in Sources */,
 				4CA07DD623DAC80C002246E2 /* ViewController.swift in Sources */,
+				4CA07DEC23DAC81E002246E2 /* FacebookServiceManager.swift in Sources */,
+				4CA07DEA23DAC81E002246E2 /* TwitterServiceManager.swift in Sources */,
+				4CA07DED23DAC81E002246E2 /* SocialShareProtocol.swift in Sources */,
 				4CA07DD423DAC80C002246E2 /* AppDelegate.swift in Sources */,
+				4CA07DEF23DACB94002246E2 /* SharablePost.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,12 +315,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GA4BAP9K3F;
 				INFOPLIST_FILE = SocialShareDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = www.www.demo.SocialShareDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = www.www.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -300,12 +333,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GA4BAP9K3F;
 				INFOPLIST_FILE = SocialShareDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = www.www.demo.SocialShareDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = www.www.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";

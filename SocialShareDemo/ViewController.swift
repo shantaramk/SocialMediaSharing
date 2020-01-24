@@ -15,6 +15,19 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
 
-
+    @IBAction func shareButtonClicked(_ sender: Any) {
+        
+        SocialShareManager(serviceType: .facebook,
+                           target: self,
+                           post: SharablePost(image: #imageLiteral(resourceName: "lorry"),
+                                                   url: URL(string: "www.google.com"),
+                                                   text: "Hello find the link"))
+        { (error, message) in
+            if !error {
+                print(message)
+            }
+        }.run()
+    }
+    
 }
 
