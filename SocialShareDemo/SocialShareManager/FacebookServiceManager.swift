@@ -8,6 +8,13 @@
 
 import UIKit
 import Social
+import FBSDKCoreKit
+import FBSDKLoginKit
+import FBSDKShareKit
+import FacebookLogin
+import FacebookCore
+import FacebookLogin
+import FacebookShare
 
 class FacebookServiceManager: NSObject, SocialServiable {
     
@@ -16,6 +23,8 @@ class FacebookServiceManager: NSObject, SocialServiable {
     var target: UIViewController =  UIViewController()
     
     private var post: SocialMediaSharable?
+
+    let loginManager = LoginManager()
 
     
     required init(completionHandler: @escaping Handler, target: UIViewController, post: SocialMediaSharable) {
@@ -30,7 +39,7 @@ class FacebookServiceManager: NSObject, SocialServiable {
     }
     
     func run() {
-        
+        /*
         let share = [post?.image!  as Any , post?.text! as Any, post?.url! as Any] as [Any]
         
         let activityViewController = UIActivityViewController(activityItems: share, applicationActivities: nil)
@@ -38,7 +47,152 @@ class FacebookServiceManager: NSObject, SocialServiable {
         activityViewController.popoverPresentationController?.sourceView = self.target.view
         
         self.target.present(activityViewController, animated: true, completion: nil)
+        */
+      
+        /*
+        pushToFacebookView()
+        */
+      
+        shareInFacebook()
+     }
+    
+    func configureLoginButton() {
+        
+       
+    }
+    
+    private func shareInFacebook() {
+        
+        if UIApplication.shared.canOpenURL(URL(string: "fb://")!) {
+            
+            let content = SharePhotoContent()
+            
+            content.photos = [SharePhoto(image: (post?.image!)!, userGenerated: true)]
+            
+            let obj = ShareDialog(fromViewController: self.target, content: content, delegate: self)
+            
+            obj.delegate = self
+            
+            if obj.canShow {
+                
+                obj.show()
+            }
+            
+        } else {
+            self.serviceHandler!(true, "Facebook Messenger must be installed in order to share to it")
+        }
+    }
+    
+}
+
+extension ViewController: SharingDelegate {
+    
+    func sharer(_ sharer: Sharing, didCompleteWithResults results: [String : Any]) {
+        print("Function: \(#function), line: \(#line)")
+    }
+    
+    func sharer(_ sharer: Sharing, didFailWithError error: Error) {
+        print("Function: \(#function), line: \(#line)")
+
+    }
+    
+    func sharerDidCancel(_ sharer: Sharing) {
+        print("Function: \(#function), line: \(#line)")
+
+    }
+    
+    
+}
+
+extension FacebookServiceManager: SharingDelegate {
+    
+    func sharer(_ sharer: Sharing, didCompleteWithResults results: [String : Any]) {
+        print("Function: \(#function), line: \(#line)")
+    }
+    
+    func sharer(_ sharer: Sharing, didFailWithError error: Error) {
+        print("Function: \(#function), line: \(#line)")
+
+    }
+    
+    func sharerDidCancel(_ sharer: Sharing) {
+        print("Function: \(#function), line: \(#line)")
+    }
+    
+    
+}
+// MARK: - Facebook Login
+
+extension FacebookServiceManager {
+    
+    func pushToFacebookView() {
+        //loginManager.loginBehavior = .browser
+        
+        loginManager.logIn(permissions: ["public_profile", "email"], from: target) { (loginResult, error) in
+            
+            if error == nil {
+                
+                let fbloginresult: LoginManagerLoginResult = loginResult!
+                
+                if !fbloginresult.grantedPermissions.isEmpty {
+                    
+                    if fbloginresult.grantedPermissions.contains("email") {
+                        
+                        self.getFBUserData()
+                    }
+                }
+            }
+        }
+    }
+    
+    func getFBUserData() {
+        
+        if AccessToken.current != nil {
+            
+            GraphRequest(graphPath: "me", parameters: ["fields": "id, name, picture.type(large), email"]).start(completionHandler: { (_, result, error) -> Void in
+                // self.dismissHUD()
+                if error == nil {
+                    
+                    /*
+                    if let info = result as? [String: AnyObject] {
+                        
+                        let accessToken = AccessToken.current!.tokenString
+                        
+                       // self.delegate?.didLogInWithUserInformation(facebookId: facebookInfo.id, accessToken: accessToken, userFacebookModel: facebookInfo)
+                    } */
+                }
+            })
+        }
+    }
+    
+    func clearSession() {
+        loginManager.logOut()
+        
     }
 }
 
+// MARK: - Facebook login delegate
 
+extension FacebookServiceManager {
+    
+    func loginButton(_ loginButton: FBLoginButton!, didCompleteWith result: LoginManagerLoginResult!, error: Error!) {
+        
+        if error == nil {
+            
+            if AccessToken.current != nil {
+                
+                getFBUserData()
+                
+                LoginManager().logOut()
+            }
+        }
+    }
+    
+    func loginButtonDidLogOut(_ loginButton: FBLoginButton!) {
+    }
+    
+    func loginButtonWillLogin(_ loginButton: FBLoginButton!) -> Bool {
+        
+        return true
+    }
+}

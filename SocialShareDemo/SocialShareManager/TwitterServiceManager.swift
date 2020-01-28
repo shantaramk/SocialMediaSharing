@@ -30,6 +30,14 @@ class TwitterServiceManager: NSObject, SocialServiable {
     
     func run() {
         
+        let share = [post?.image!  as Any , post?.text! as Any, post?.url! as Any] as [Any]
+        
+        let activityViewController = UIActivityViewController(activityItems: share, applicationActivities: nil)
+        
+        activityViewController.popoverPresentationController?.sourceView = self.target.view
+        
+        self.target.present(activityViewController, animated: true, completion: nil)
+        
         
     }
 }

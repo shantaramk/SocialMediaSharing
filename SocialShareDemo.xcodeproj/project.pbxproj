@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -18,9 +18,12 @@
 		4CA07DED23DAC81E002246E2 /* SocialShareProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA07DE923DAC81E002246E2 /* SocialShareProtocol.swift */; };
 		4CA07DEF23DACB94002246E2 /* SharablePost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA07DEE23DACB94002246E2 /* SharablePost.swift */; };
 		4CA07DF123DACC92002246E2 /* SocialMediaSharable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA07DF023DACC92002246E2 /* SocialMediaSharable.swift */; };
+		4CB973DB23E0103D00C6A502 /* ActionSheetAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB973DA23E0102600C6A502 /* ActionSheetAlert.swift */; };
+		9A8F467079F9BFA3A082364B /* Pods_SocialShareDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 294EC4356A086E2FE4121F51 /* Pods_SocialShareDemo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		294EC4356A086E2FE4121F51 /* Pods_SocialShareDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SocialShareDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CA07DD023DAC80C002246E2 /* SocialShareDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialShareDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CA07DD323DAC80C002246E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4CA07DD523DAC80C002246E2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -34,6 +37,9 @@
 		4CA07DE923DAC81E002246E2 /* SocialShareProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialShareProtocol.swift; sourceTree = "<group>"; };
 		4CA07DEE23DACB94002246E2 /* SharablePost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharablePost.swift; sourceTree = "<group>"; };
 		4CA07DF023DACC92002246E2 /* SocialMediaSharable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaSharable.swift; sourceTree = "<group>"; };
+		4CB973DA23E0102600C6A502 /* ActionSheetAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionSheetAlert.swift; sourceTree = "<group>"; };
+		60EEAD8132EEE249E7ED5FC8 /* Pods-SocialShareDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialShareDemo.debug.xcconfig"; path = "Target Support Files/Pods-SocialShareDemo/Pods-SocialShareDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		AF3663D0485F47C942DAE675 /* Pods-SocialShareDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialShareDemo.release.xcconfig"; path = "Target Support Files/Pods-SocialShareDemo/Pods-SocialShareDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A8F467079F9BFA3A082364B /* Pods_SocialShareDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,6 +59,8 @@
 			children = (
 				4CA07DD223DAC80C002246E2 /* SocialShareDemo */,
 				4CA07DD123DAC80C002246E2 /* Products */,
+				607D75F61794B202FEA8DA42 /* Pods */,
+				FDF24E90045ADA6922E5D41B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -66,6 +75,7 @@
 		4CA07DD223DAC80C002246E2 /* SocialShareDemo */ = {
 			isa = PBXGroup;
 			children = (
+				4CB973D923E00FEE00C6A502 /* SKExtension */,
 				4CA07DE523DAC81E002246E2 /* SocialShareManager */,
 				4CA07DD323DAC80C002246E2 /* AppDelegate.swift */,
 				4CA07DD523DAC80C002246E2 /* ViewController.swift */,
@@ -90,6 +100,31 @@
 			path = SocialShareManager;
 			sourceTree = "<group>";
 		};
+		4CB973D923E00FEE00C6A502 /* SKExtension */ = {
+			isa = PBXGroup;
+			children = (
+				4CB973DA23E0102600C6A502 /* ActionSheetAlert.swift */,
+			);
+			path = SKExtension;
+			sourceTree = "<group>";
+		};
+		607D75F61794B202FEA8DA42 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				60EEAD8132EEE249E7ED5FC8 /* Pods-SocialShareDemo.debug.xcconfig */,
+				AF3663D0485F47C942DAE675 /* Pods-SocialShareDemo.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		FDF24E90045ADA6922E5D41B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				294EC4356A086E2FE4121F51 /* Pods_SocialShareDemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -97,9 +132,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4CA07DE223DAC80D002246E2 /* Build configuration list for PBXNativeTarget "SocialShareDemo" */;
 			buildPhases = (
+				D7AA17C45E4650C074FB7E33 /* [CP] Check Pods Manifest.lock */,
 				4CA07DCC23DAC80C002246E2 /* Sources */,
 				4CA07DCD23DAC80C002246E2 /* Frameworks */,
 				4CA07DCE23DAC80C002246E2 /* Resources */,
+				9AC242493CA2F15C1658881F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -156,6 +193,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		9AC242493CA2F15C1658881F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SocialShareDemo/Pods-SocialShareDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SocialShareDemo/Pods-SocialShareDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SocialShareDemo/Pods-SocialShareDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D7AA17C45E4650C074FB7E33 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SocialShareDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4CA07DCC23DAC80C002246E2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -167,6 +246,7 @@
 				4CA07DEC23DAC81E002246E2 /* FacebookServiceManager.swift in Sources */,
 				4CA07DEA23DAC81E002246E2 /* TwitterServiceManager.swift in Sources */,
 				4CA07DED23DAC81E002246E2 /* SocialShareProtocol.swift in Sources */,
+				4CB973DB23E0103D00C6A502 /* ActionSheetAlert.swift in Sources */,
 				4CA07DD423DAC80C002246E2 /* AppDelegate.swift in Sources */,
 				4CA07DEF23DACB94002246E2 /* SharablePost.swift in Sources */,
 			);
@@ -312,6 +392,7 @@
 		};
 		4CA07DE323DAC80D002246E2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 60EEAD8132EEE249E7ED5FC8 /* Pods-SocialShareDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -323,13 +404,14 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = www.www.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		4CA07DE423DAC80D002246E2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AF3663D0485F47C942DAE675 /* Pods-SocialShareDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -341,7 +423,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = www.www.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

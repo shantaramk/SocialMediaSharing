@@ -1,0 +1,51 @@
+PODS:
+  - FacebookCore (0.9.0):
+    - FBSDKCoreKit (~> 5.0)
+  - FacebookLogin (0.9.0):
+    - FacebookCore (~> 0.9.0)
+    - FBSDKCoreKit (~> 5.0)
+    - FBSDKLoginKit (~> 5.0)
+  - FacebookShare (0.9.0):
+    - FacebookCore (~> 0.9.0)
+    - FBSDKCoreKit (~> 5.0)
+    - FBSDKShareKit (~> 5.0)
+  - FBSDKCoreKit (5.11.1):
+    - FBSDKCoreKit/Basics (= 5.11.1)
+    - FBSDKCoreKit/Core (= 5.11.1)
+  - FBSDKCoreKit/Basics (5.11.1)
+  - FBSDKCoreKit/Core (5.11.1):
+    - FBSDKCoreKit/Basics
+  - FBSDKLoginKit (5.11.1):
+    - FBSDKLoginKit/Login (= 5.11.1)
+  - FBSDKLoginKit/Login (5.11.1):
+    - FBSDKCoreKit (~> 5.0)
+  - FBSDKShareKit (5.15.0):
+    - FBSDKShareKit/Share (= 5.15.0)
+  - FBSDKShareKit/Share (5.15.0):
+    - FBSDKCoreKit (~> 5.0)
+
+DEPENDENCIES:
+  - FacebookCore
+  - FacebookLogin
+  - FacebookShare
+
+SPEC REPOS:
+  trunk:
+    - FacebookCore
+    - FacebookLogin
+    - FacebookShare
+    - FBSDKCoreKit
+    - FBSDKLoginKit
+    - FBSDKShareKit
+
+SPEC CHECKSUMS:
+  FacebookCore: ba86524b66cfa86d0f8e65d08faa8504a9f732dd
+  FacebookLogin: 6cee9fd6e1fe976fe8f7eec199e27b28b14f5d63
+  FacebookShare: 85968ad1b1606c4944fb154924e425fd29184ea5
+  FBSDKCoreKit: 5aada61a229054694810f3cee231f986004b3c49
+  FBSDKLoginKit: 0e4572e0279e477103b57978e3ea05fac1dd673d
+  FBSDKShareKit: 23bad745329f966836f9a2493f86fc7c092b02e6
+
+PODFILE CHECKSUM: e6a94132e7a0e3aa8da7e5cb5773b9ceaca9d61a
+
+COCOAPODS: 1.8.3
