@@ -7,8 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C6F9F8623E154A90050A320 /* PhotoViewController+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6F9F8523E154A90050A320 /* PhotoViewController+UI.swift */; };
+		4C6F9F8823E1550B0050A320 /* AbstractViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6F9F8723E1550B0050A320 /* AbstractViewController.swift */; };
+		4C6F9F8A23E155750050A320 /* PhotoViewController+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6F9F8923E155750050A320 /* PhotoViewController+Delegate.swift */; };
+		4C6F9F8E23E156040050A320 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6F9F8C23E156040050A320 /* PhotoCell.swift */; };
+		4C6F9F8F23E156040050A320 /* PhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C6F9F8D23E156040050A320 /* PhotoCell.xib */; };
 		4CA07DD423DAC80C002246E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA07DD323DAC80C002246E2 /* AppDelegate.swift */; };
-		4CA07DD623DAC80C002246E2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA07DD523DAC80C002246E2 /* ViewController.swift */; };
+		4CA07DD623DAC80C002246E2 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA07DD523DAC80C002246E2 /* PhotoViewController.swift */; };
 		4CA07DD923DAC80C002246E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CA07DD723DAC80C002246E2 /* Main.storyboard */; };
 		4CA07DDB23DAC80D002246E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CA07DDA23DAC80D002246E2 /* Assets.xcassets */; };
 		4CA07DDE23DAC80D002246E2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CA07DDC23DAC80D002246E2 /* LaunchScreen.storyboard */; };
@@ -24,9 +29,14 @@
 
 /* Begin PBXFileReference section */
 		294EC4356A086E2FE4121F51 /* Pods_SocialShareDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SocialShareDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C6F9F8523E154A90050A320 /* PhotoViewController+UI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PhotoViewController+UI.swift"; sourceTree = "<group>"; };
+		4C6F9F8723E1550B0050A320 /* AbstractViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractViewController.swift; sourceTree = "<group>"; };
+		4C6F9F8923E155750050A320 /* PhotoViewController+Delegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PhotoViewController+Delegate.swift"; sourceTree = "<group>"; };
+		4C6F9F8C23E156040050A320 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
+		4C6F9F8D23E156040050A320 /* PhotoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoCell.xib; sourceTree = "<group>"; };
 		4CA07DD023DAC80C002246E2 /* SocialShareDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialShareDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CA07DD323DAC80C002246E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4CA07DD523DAC80C002246E2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4CA07DD523DAC80C002246E2 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		4CA07DD823DAC80C002246E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4CA07DDA23DAC80D002246E2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4CA07DDD23DAC80D002246E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -54,6 +64,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4C6F9F8423E154400050A320 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4C6F9F8723E1550B0050A320 /* AbstractViewController.swift */,
+				4CA07DD523DAC80C002246E2 /* PhotoViewController.swift */,
+				4C6F9F8523E154A90050A320 /* PhotoViewController+UI.swift */,
+				4C6F9F8923E155750050A320 /* PhotoViewController+Delegate.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		4C6F9F8B23E155B80050A320 /* TableCell */ = {
+			isa = PBXGroup;
+			children = (
+				4C6F9F8C23E156040050A320 /* PhotoCell.swift */,
+				4C6F9F8D23E156040050A320 /* PhotoCell.xib */,
+			);
+			path = TableCell;
+			sourceTree = "<group>";
+		};
 		4CA07DC723DAC80C002246E2 = {
 			isa = PBXGroup;
 			children = (
@@ -75,10 +105,11 @@
 		4CA07DD223DAC80C002246E2 /* SocialShareDemo */ = {
 			isa = PBXGroup;
 			children = (
+				4C6F9F8B23E155B80050A320 /* TableCell */,
+				4C6F9F8423E154400050A320 /* ViewController */,
 				4CB973D923E00FEE00C6A502 /* SKExtension */,
 				4CA07DE523DAC81E002246E2 /* SocialShareManager */,
 				4CA07DD323DAC80C002246E2 /* AppDelegate.swift */,
-				4CA07DD523DAC80C002246E2 /* ViewController.swift */,
 				4CA07DD723DAC80C002246E2 /* Main.storyboard */,
 				4CA07DDA23DAC80D002246E2 /* Assets.xcassets */,
 				4CA07DDC23DAC80D002246E2 /* LaunchScreen.storyboard */,
@@ -185,6 +216,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C6F9F8F23E156040050A320 /* PhotoCell.xib in Resources */,
 				4CA07DDE23DAC80D002246E2 /* LaunchScreen.storyboard in Resources */,
 				4CA07DDB23DAC80D002246E2 /* Assets.xcassets in Resources */,
 				4CA07DD923DAC80C002246E2 /* Main.storyboard in Resources */,
@@ -242,12 +274,16 @@
 			files = (
 				4CA07DEB23DAC81E002246E2 /* SocialShareManager.swift in Sources */,
 				4CA07DF123DACC92002246E2 /* SocialMediaSharable.swift in Sources */,
-				4CA07DD623DAC80C002246E2 /* ViewController.swift in Sources */,
+				4CA07DD623DAC80C002246E2 /* PhotoViewController.swift in Sources */,
 				4CA07DEC23DAC81E002246E2 /* FacebookServiceManager.swift in Sources */,
+				4C6F9F8A23E155750050A320 /* PhotoViewController+Delegate.swift in Sources */,
 				4CA07DEA23DAC81E002246E2 /* TwitterServiceManager.swift in Sources */,
+				4C6F9F8E23E156040050A320 /* PhotoCell.swift in Sources */,
 				4CA07DED23DAC81E002246E2 /* SocialShareProtocol.swift in Sources */,
 				4CB973DB23E0103D00C6A502 /* ActionSheetAlert.swift in Sources */,
+				4C6F9F8823E1550B0050A320 /* AbstractViewController.swift in Sources */,
 				4CA07DD423DAC80C002246E2 /* AppDelegate.swift in Sources */,
+				4C6F9F8623E154A90050A320 /* PhotoViewController+UI.swift in Sources */,
 				4CA07DEF23DACB94002246E2 /* SharablePost.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

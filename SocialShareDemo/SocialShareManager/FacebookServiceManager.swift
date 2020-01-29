@@ -29,7 +29,6 @@ class FacebookServiceManager: NSObject, SocialServiable {
     
     required init(completionHandler: @escaping Handler, target: UIViewController, post: SocialMediaSharable) {
         
-        super.init()
         
         self.serviceHandler = completionHandler
         
@@ -38,28 +37,13 @@ class FacebookServiceManager: NSObject, SocialServiable {
         self.post = post
     }
     
+ 
     func run() {
-        /*
-        let share = [post?.image!  as Any , post?.text! as Any, post?.url! as Any] as [Any]
-        
-        let activityViewController = UIActivityViewController(activityItems: share, applicationActivities: nil)
-        
-        activityViewController.popoverPresentationController?.sourceView = self.target.view
-        
-        self.target.present(activityViewController, animated: true, completion: nil)
-        */
-      
-        /*
-        pushToFacebookView()
-        */
       
         shareInFacebook()
      }
     
-    func configureLoginButton() {
-        
-       
-    }
+    func configureLoginButton() {}
     
     private func shareInFacebook() {
         
@@ -69,7 +53,13 @@ class FacebookServiceManager: NSObject, SocialServiable {
             
             content.photos = [SharePhoto(image: (post?.image!)!, userGenerated: true)]
             
-            let obj = ShareDialog(fromViewController: self.target, content: content, delegate: self)
+//            let obj = ShareDialog(fromViewController: self.target, content: content, delegate: self)
+            
+            let obj = ShareDialog()
+            
+            obj.fromViewController = self.target
+            
+            obj.shareContent = content
             
             obj.delegate = self
             
@@ -85,42 +75,46 @@ class FacebookServiceManager: NSObject, SocialServiable {
     
 }
 
-extension ViewController: SharingDelegate {
+// MARK: - Share Media Delegate
+
+extension PhotoViewController: SharingDelegate {
     
     func sharer(_ sharer: Sharing, didCompleteWithResults results: [String : Any]) {
-        print("Function: \(#function), line: \(#line)")
+        
+        Alert.showAlert(viewController: self, title: "Success", message: "Photo uploaded successfullyt")
     }
     
     func sharer(_ sharer: Sharing, didFailWithError error: Error) {
-        print("Function: \(#function), line: \(#line)")
+        
+        Alert.showAlert(viewController: self, title: "Success", message: error.localizedDescription)
 
     }
     
     func sharerDidCancel(_ sharer: Sharing) {
-        print("Function: \(#function), line: \(#line)")
+        
+        Alert.showAlert(viewController: self, title: "Success", message: "User has cancelled photo uploading operation")
 
     }
-    
     
 }
 
 extension FacebookServiceManager: SharingDelegate {
     
-    func sharer(_ sharer: Sharing, didCompleteWithResults results: [String : Any]) {
-        print("Function: \(#function), line: \(#line)")
-    }
-    
-    func sharer(_ sharer: Sharing, didFailWithError error: Error) {
-        print("Function: \(#function), line: \(#line)")
+   func sharer(_ sharer: Sharing, didCompleteWithResults results: [String : Any]) {
+           self.serviceHandler!(false, "photo uploaded successfullyt")
+       }
+       
+       func sharer(_ sharer: Sharing, didFailWithError error: Error) {
+           self.serviceHandler!(true, error.localizedDescription)
 
-    }
-    
-    func sharerDidCancel(_ sharer: Sharing) {
-        print("Function: \(#function), line: \(#line)")
-    }
-    
-    
+       }
+       
+       func sharerDidCancel(_ sharer: Sharing) {
+           self.serviceHandler!(true, "User has cancelled photo uploading operation")
+
+       }
 }
+
 // MARK: - Facebook Login
 
 extension FacebookServiceManager {

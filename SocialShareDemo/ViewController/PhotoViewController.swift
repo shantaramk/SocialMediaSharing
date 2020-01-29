@@ -8,7 +8,13 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class PhotoViewController: AbstractViewController {
+    
+    //MARK:- IBOutlet
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    var imageList = ["1","2","3", "4", "5","6","7"]
     
     var socialMediaList: [(String, UIAlertAction.Style)] {
         
@@ -17,7 +23,7 @@ class ViewController: UIViewController {
             
             actions.append(("Facebook", UIAlertAction.Style.default))
             
-            actions.append(("Twitter", UIAlertAction.Style.default))
+            actions.append(("Other", UIAlertAction.Style.default))
             
             return actions
         }
@@ -28,22 +34,26 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
+        configureUI()
     }
     
     
     @IBAction func shareButtonClicked(_ sender: UIButton) {
         
-        showSocialShareAlert()
+        
+        
+        showSocialShareAlert(SharablePost(image: UIImage(named: self.imageList[sender.tag]),
+        url: URL(string: "https://about.me/kokate"),
+        text: "Hello find the photos and profile: https://about.me/kokate"))
         
     }
     
 }
 // MARK: - Private Methods
 
-extension ViewController {
+extension PhotoViewController {
     
-    func showSocialShareAlert() {
+    func showSocialShareAlert(_ post: SharablePost) {
         
         
         Alert.showActionsheet(viewController: self, title: "Share", message: "", actions: self.socialMediaList) { (index) in
@@ -52,21 +62,19 @@ extension ViewController {
             
             if index == 0 {
                 
-                self.facebookPhotoShare()
+                self.facebookPhotoShare(post)
                 
             } else {
                 
-                self.twitterPhotoShare()
+                self.twitterPhotoShare(post)
             }
         }
     }
     
-    func facebookPhotoShare() {
+    func facebookPhotoShare(_ post: SharablePost) {
         SocialShareManager(serviceType: .facebook,
                            target: self,
-                           post: SharablePost(image: #imageLiteral(resourceName: "lorry"),
-                                              url: URL(string: "www.google.com"),
-                                              text: "Hello find the link"))
+                           post: post)
         { (error, message) in
             
             if !error {
@@ -82,12 +90,10 @@ extension ViewController {
         .run()
     }
     
-    func twitterPhotoShare() {
+    func twitterPhotoShare(_ post: SharablePost) {
         SocialShareManager(serviceType: .twitter,
                            target: self,
-                           post: SharablePost(image: #imageLiteral(resourceName: "lorry"),
-                                              url: URL(string: "www.google.com"),
-                                              text: "Hello find the link"))
+                           post: post)
         { (error, message) in
             
             if !error {
